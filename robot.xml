@@ -19,9 +19,10 @@
     <worldbody>
         <geom name="floor" size="0 0 .05" type="plane" condim="3"/> 
         <body name="body">
+            <freejoint name="root"/>
             <geom mesh="body"/>
             <body name="leftHip">
-                <joint name="leftHipJoint" axis="0 1 0" pos="-0.05715 -0.03810 0.422432 "/>
+                <joint name="leftHipJoint" axis="0 0 1" pos="-0.05715 -0.03810 0.422432 " range="-45 45"/>
                 <geom mesh="leftHip"/>
                 <body name="upperLeftLeg">
                     <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.01905 -0.03810 0.384332 "/>
@@ -33,7 +34,7 @@
                 </body>
             </body>
             <body name="rightHip">
-                <joint name="rightHipJoint" axis="0 1 0" pos="-0.23495 -0.03810 0.422432 "/>
+                <joint name="rightHipJoint" axis="0 0 1" pos="-0.23495 -0.03810 0.422432 "/>
                 <geom mesh="rightHip"/>
                 <body name="upperRightLeg">
                      <joint name="upperRightLegJoint" axis="1 0 0" pos="-0.27305 -0.03810 0.384332 "/>
@@ -46,4 +47,14 @@
             </body>
         </body>
     </worldbody>
+
+    <actuator>
+        <position name="leftHipJoint" joint="leftHipJoint" />
+        <position name="upperLeftLegJoint" joint="upperLeftLegJoint" />
+        <position name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
+
+        <position name="rightHipJoint" joint="rightHipJoint" />
+        <position name="upperRightLegJoint" joint="upperRightLegJoint" />
+        <position name="lowerRightLegJoint" joint="lowerRightLegJoint" />
+    </actuator>
 </mujoco>
