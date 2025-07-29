@@ -1,0 +1,42 @@
+<mujoco model="really_simple_arm">
+    <default>
+        <!-- convert the Fusion 360 coordinate system to MuJoCo -->
+        <geom type="mesh" xyaxes="1 0 0 0 0 1"/>
+    </default>
+    <asset>
+        <!-- Fusion outputs meshes with mm units by default, but must be converted to m in MuJoCo, hence the scaling -->
+        <mesh name="body" file="mesh/body.stl" scale="0.001 0.001 0.001"/>
+
+        <mesh name="leftHip" file="mesh/leftHip.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="upperLeftLeg" file="mesh/upperLeftLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="lowerLeftLeg" file="mesh/lowerLeftLeg.stl" scale="0.001 0.001 0.001"/>
+
+        <mesh name="rightHip" file="mesh/rightHip.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="upperRightLeg" file="mesh/upperRightLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="lowerRightLeg" file="mesh/lowerRightLeg.stl" scale="0.001 0.001 0.001"/>  
+
+    </asset>
+    <worldbody>
+        <body name="body">
+            <geom mesh="body"/>
+            <body name="leftHip">
+                <geom mesh="leftHip"/>
+                <body name="upperLeftLeg">
+                    <geom mesh="upperLeftLeg"/>
+                    <body name="lowerLeftLeg">
+                        <geom mesh="lowerLeftLeg"/>
+                    </body>
+                </body>
+            </body>
+            <body name="rightHip">
+                <geom mesh="rightHip"/>
+                <body name="upperRightLeg">
+                    <geom mesh="upperRightLeg"/>
+                    <body name="lowerRightLeg">
+                        <geom mesh="lowerRightLeg"/>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
