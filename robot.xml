@@ -20,22 +20,26 @@
         <geom name="floor" size="0 0 .05" type="plane" condim="3"/> 
         <body name="body">
             <geom mesh="body"/>
-
             <body name="leftHip">
-                <joint name="leftHipJoint" pos="0.1 -0.015 0.05" range="-0.78 0.78" axis=""/>
+                <joint name="leftHipJoint" axis="0 1 0" pos="-0.05715 -0.422432 -0.03810"/>
                 <geom mesh="leftHip"/>
                 <body name="upperLeftLeg">
+                    <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.01905 -0.384332 -0.03810"/>
                     <geom mesh="upperLeftLeg"/>
                     <body name="lowerLeftLeg">
+                        <joint name="lowerLeftLegJoint" axis="1 0 0" pos="0.03175 -0.181132 -0.03810"/>
                         <geom mesh="lowerLeftLeg"/>
                     </body>
                 </body>
             </body>
             <body name="rightHip">
+                <joint name="rightHipJoint" axis="0 1 0" pos="-0.23495 -0.422432 -0.03810"/>
                 <geom mesh="rightHip"/>
                 <body name="upperRightLeg">
+                     <joint name="upperRightLegJoint" axis="1 0 0" pos="-0.27305 -0.384332 -0.03810"/>
                     <geom mesh="upperRightLeg"/>
                     <body name="lowerRightLeg">
+                        <joint name="lowerRightLegJoint" axis="1 0 0" pos="-0.32385 -0.181132 -0.03810"/>
                         <geom mesh="lowerRightLeg"/>
                     </body>
                 </body>
