@@ -17,9 +17,12 @@
 
     </asset>
     <worldbody>
+        <geom name="floor" size="0 0 .05" type="plane" condim="3"/> 
         <body name="body">
             <geom mesh="body"/>
+
             <body name="leftHip">
+                <joint name="leftHipJoint" pos="0.1 -0.015 0.05" range="-0.78 0.78" axis=""/>
                 <geom mesh="leftHip"/>
                 <body name="upperLeftLeg">
                     <geom mesh="upperLeftLeg"/>
