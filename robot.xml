@@ -1,7 +1,7 @@
 <mujoco model="really_simple_arm">
     <default>
         <!-- convert the Fusion 360 coordinate system to MuJoCo -->
-        <geom type="mesh" xyaxes="1 0 0 0 1 0"/>
+        <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
     </default>
     <asset>
         <!-- Fusion outputs meshes with mm units by default, but must be converted to m in MuJoCo, hence the scaling -->
@@ -17,7 +17,7 @@
 
     </asset>
     <worldbody>
-        <geom name="floor" size="0 0 .05" type="plane" condim="3"/> 
+        <geom name="floor" size="0 0 .05" type="plane" condim="3" rgba="0.9 0.9 0.9 1"/> 
         <body name="body">
             <freejoint name="root"/>
             <geom mesh="body"/>
