@@ -1,9 +1,16 @@
 <mujoco model="really_simple_arm">
+
+    <visual>
+        <map force="0.1" zfar="30"/>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <global offwidth="2560" offheight="1440" elevation="-20" azimuth="120"/>
+    </visual>
+
+
     <default>
         <!-- convert the Fusion 360 coordinate system to MuJoCo -->
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <!-- <motor  gear="40" /> -->
-        <position  kp="40" /> 
+        <motor  gear="10" />
     </default>
     <asset>
         <!-- Fusion outputs meshes with mm units by default, but must be converted to m in MuJoCo, hence the scaling -->
@@ -23,10 +30,10 @@
         <geom name="floor" size="0 0 .05" type="plane" condim="3" rgba="0.9 0.9 0.9 1"/> 
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
         <body name="body">
-            <freejoint name="root"/>
-            <geom mesh="body"/>
+            <freejoint align="true" name="root"/>
+            <geom mesh="body" density="300"/>
             <body name="topLeftLinkage">
-                <joint name="leftHipJoint" axis="1 0 0" pos="-0.36195 0.15240  0.607532" />
+                <joint name="leftHipJoint" axis="0 1 0" pos="-0.36195 0.15240  0.607532" />
                 <geom mesh="topLeftLinkage"/>
                 <body name="upperLeftLeg">
                     <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.36195 0.15240  0.404332"/>
@@ -42,7 +49,7 @@
                 </body>
             </body>
             <body name="topRightLinkage">
-                <joint name="rightHipJoint" axis="1 0 0" pos="-0.05715 0.15240  0.607532"/>
+                <joint name="rightHipJoint" axis="0 1 0" pos="-0.05715 0.15240  0.607532"/>
                 <geom mesh="topRightLinkage"/>
                 <body name="upperRightLeg">
                      <joint name="upperRightLegJoint" axis="1 0 0" pos="-0.05715 0.15240  0.404332"/>
@@ -61,22 +68,19 @@
     </worldbody>
 
     <actuator>
-        <position name="leftHipJoint" joint="leftHipJoint" />
-        <position name="upperLeftLegJoint" joint="upperLeftLegJoint" />
-        <position name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
-        <position name="leftFootJoint" joint="leftFootJoint" />
+        <motor name="leftHipJoint" joint="leftHipJoint" />
+        <motor name="upperLeftLegJoint" joint="upperLeftLegJoint" />
+        <motor name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
+        <motor name="leftFootJoint" joint="leftFootJoint" />
 
-        <position name="rightHipJoint" joint="rightHipJoint" />
-        <position name="upperRightLegJoint" joint="upperRightLegJoint" />
-        <position name="lowerRightLegJoint" joint="lowerRightLegJoint" />
-        <position name="rightFootJoint" joint="rightFootJoint" />
+        <motor name="rightHipJoint" joint="rightHipJoint" />
+        <motor name="upperRightLegJoint" joint="upperRightLegJoint" />
+        <motor name="lowerRightLegJoint" joint="lowerRightLegJoint" />
+        <motor name="rightFootJoint" joint="rightFootJoint" />
     </actuator>
 
     <keyframe>
-            <key
-            qpos="2.4413e-05 -0.00012549 -0.11 1 -0.000123165 1.43591e-06 1.64645e-05 0.973896 -0.502656 0.00025619 -0.408408 -1.09956 0.879648 0.439824 -0.188496"
-            ctrl="0.973896 -0.502656 0.00025619 -0.408408 -1.09956 0.879648 0.439824 -0.188496"
-            />
+    <key qpos="2.4413e-05 -0.00012549 -0.11 1 -0.000123165 1.43591e-06 1.64645e-05 0.094248 0.848232 -1.94779 1.13098 -0.062832 1.22522 -0.534072 -0.659736"/>
     </keyframe>
 
 </mujoco>
