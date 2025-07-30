@@ -8,11 +8,11 @@
         <!-- Fusion outputs meshes with mm units by default, but must be converted to m in MuJoCo, hence the scaling -->
         <mesh name="body" file="mesh/body.stl" scale="0.001 0.001 0.001"/>
 
-        <mesh name="leftHip" file="mesh/leftHip.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="topLeftLinkage" file="mesh/topLeftLinkage.stl" scale="0.001 0.001 0.001"/>
         <mesh name="upperLeftLeg" file="mesh/upperLeftLeg.stl" scale="0.001 0.001 0.001"/>
         <mesh name="lowerLeftLeg" file="mesh/lowerLeftLeg.stl" scale="0.001 0.001 0.001"/>
 
-        <mesh name="rightHip" file="mesh/rightHip.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="topRightLinkage" file="mesh/topRightLinkage.stl" scale="0.001 0.001 0.001"/>
         <mesh name="upperRightLeg" file="mesh/upperRightLeg.stl" scale="0.001 0.001 0.001"/>
         <mesh name="lowerRightLeg" file="mesh/lowerRightLeg.stl" scale="0.001 0.001 0.001"/>  
 
@@ -23,26 +23,26 @@
         <body name="body">
             <freejoint name="root"/>
             <geom mesh="body"/>
-            <body name="leftHip">
-                <joint name="leftHipJoint" axis="0 0 1" pos="-0.05715 -0.03810 0.422432 " range="-45 45"/>
-                <geom mesh="leftHip"/>
+            <body name="topLeftLinkage">
+                <joint name="leftHipJoint" axis="1 0 0" pos="-0.29845 0.10160  0.587532" range="-45 45"/>
+                <geom mesh="topLeftLinkage"/>
                 <body name="upperLeftLeg">
-                    <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.01905 -0.03810 0.384332 "/>
+                    <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.29845 0.10160  0.384332"/>
                     <geom mesh="upperLeftLeg"/>
                     <body name="lowerLeftLeg">
-                        <joint name="lowerLeftLegJoint" axis="1 0 0" pos="0.03175 -0.03810 0.181132 "/>
+                        <joint name="lowerLeftLegJoint" axis="1 0 0" pos="-0.29845 0.10160  0.181132"/>
                         <geom mesh="lowerLeftLeg"/>
                     </body>
                 </body>
             </body>
-            <body name="rightHip">
-                <joint name="rightHipJoint" axis="0 0 1" pos="-0.23495 -0.03810 0.422432 "/>
-                <geom mesh="rightHip"/>
+            <body name="topRightLinkage">
+                <joint name="rightHipJoint" axis="1 0 0" pos="0.00635 0.10160  0.587532"/>
+                <geom mesh="topRightLinkage"/>
                 <body name="upperRightLeg">
-                     <joint name="upperRightLegJoint" axis="1 0 0" pos="-0.27305 -0.03810 0.384332 "/>
+                     <joint name="upperRightLegJoint" axis="1 0 0" pos="0.00635 0.10160  0.384332"/>
                     <geom mesh="upperRightLeg"/>
                     <body name="lowerRightLeg">
-                        <joint name="lowerRightLegJoint" axis="1 0 0" pos="-0.32385 -0.03810 0.181132 "/>
+                        <joint name="lowerRightLegJoint" axis="1 0 0" pos="0.00635 0.10160  0.181132"/>
                         <geom mesh="lowerRightLeg"/>
                     </body>
                 </body>
