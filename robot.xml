@@ -2,7 +2,7 @@
     <default>
         <!-- convert the Fusion 360 coordinate system to MuJoCo -->
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <motor  gear="10" />
+        <motor  gear="40" />
     </default>
     <asset>
         <!-- Fusion outputs meshes with mm units by default, but must be converted to m in MuJoCo, hence the scaling -->
@@ -24,7 +24,7 @@
             <freejoint name="root"/>
             <geom mesh="body"/>
             <body name="topLeftLinkage">
-                <joint name="leftHipJoint" axis="1 0 0" pos="-0.29845 0.10160  0.587532" range="-45 45"/>
+                <joint name="leftHipJoint" axis="1 0 0" pos="-0.29845 0.10160  0.587532" />
                 <geom mesh="topLeftLinkage"/>
                 <body name="upperLeftLeg">
                     <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.29845 0.10160  0.384332"/>
@@ -59,4 +59,10 @@
         <motor name="upperRightLegJoint" joint="upperRightLegJoint" />
         <motor name="lowerRightLegJoint" joint="lowerRightLegJoint" />
     </actuator>
+
+    <keyframe>
+        <key name="squat"  qpos="-0.00102341 0.0107065 -0.346683 0.999975 0.00697912 -0.000724223 0.000878873 -1.41839 2.83038 -1.43596 -1.42211 2.8241 -1.42606"/>
+    </keyframe>
+
+
 </mujoco>
