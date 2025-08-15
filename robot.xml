@@ -8,7 +8,7 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <position kp="1" />
+        <position kp="0.2" />
     </default>
 
     <asset>
@@ -27,7 +27,7 @@
         <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
         <body name="body" pos="0 0 0">
             <freejoint name="root"/>
-            <geom mesh="body" density="100"/>
+            <geom mesh="body" density="150"/>
             <body name="leftUpperLeg">
                 <joint name="leftHipJoint" axis="0 1 0" pos=".02540 0 .390984" range="-0.1 1"/>
                 <joint name="leftUpperLegJoint" axis="1 0 0" pos=".02540 0 .390984" range="-1.2 1.2"/>
