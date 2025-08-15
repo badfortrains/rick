@@ -1,66 +1,57 @@
 <mujoco model="simple_biped">
-
     <visual>
         <map force="0.1" zfar="30"/>
         <rgba haze="0.15 0.25 0.35 1"/>
         <global offwidth="2560" offheight="1440" elevation="-20" azimuth="120"/>
     </visual>
 
-
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <position  kp="20" />
+        <position kp="1.5" />
     </default>
+
     <asset>
         <mesh name="body" file="mesh/body.stl" scale="0.001 0.001 0.001"/>
-
-        <mesh name="topLeftLinkage" file="mesh/topLeftLinkage.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="upperLeftLeg" file="mesh/upperLeftLeg.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="lowerLeftLeg" file="mesh/lowerLeftLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="leftUpperLeg" file="mesh/leftUpperLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="leftLowerLeg" file="mesh/leftLowerLeg.stl" scale="0.001 0.001 0.001"/>
         <mesh name="leftFoot" file="mesh/leftFoot.stl" scale="0.001 0.001 0.001"/>
-
-        <mesh name="topRightLinkage" file="mesh/topRightLinkage.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="upperRightLeg" file="mesh/upperRightLeg.stl" scale="0.001 0.001 0.001"/>
-        <mesh name="lowerRightLeg" file="mesh/lowerRightLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="rightUpperLeg" file="mesh/rightUpperLeg.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="rightLowerLeg" file="mesh/rightLowerLeg.stl" scale="0.001 0.001 0.001"/>
         <mesh name="rightFoot" file="mesh/rightFoot.stl" scale="0.001 0.001 0.001"/>
     </asset>
+
     <worldbody>
         <geom name="floor" size="0 0 .05" type="plane" condim="3" rgba="0.9 0.9 0.9 1"/>
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
         <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
-        <body name="body" pos="0 0 0.8"> <freejoint align="true" name="root"/>
+        <body name="body" pos="0 0 0.5">
+            <freejoint name="root"/>
             <geom mesh="body" density="100"/>
-            <body name="topLeftLinkage">
-                <joint name="leftHipJoint" axis="0 1 0" pos="-0.36195 0.15240  0.607532" />
-                <geom mesh="topLeftLinkage"/>
-                <body name="upperLeftLeg">
-                    <joint name="upperLeftLegJoint" axis="1 0 0" pos="-0.36195 0.15240  0.404332" />
-                    <geom mesh="upperLeftLeg"/>
-                    <body name="lowerLeftLeg">
-                        <joint name="lowerLeftLegJoint" axis="1 0 0" pos="-0.36195 0.15240  0.201132" />
-                        <geom mesh="lowerLeftLeg"/>
-                        <body name="leftFoot">
-                            <joint name="leftFootJoint" axis="1 0 0" pos="-0.36195 0.15240  0.048732" />
-                            <geom mesh="leftFoot" />
-                            <site name="left_foot_site" pos="-0.36195 0.15240  0" size="0.01"/>
-                        </body>
+            <body name="leftUpperLeg">
+                <joint name="leftHipJoint" axis="0 1 0" pos=".02540 0 .390984" />
+                <joint name="leftUpperLegJoint" axis="1 0 0" pos=".02540 0 .390984" />
+                <geom mesh="leftUpperLeg"/>
+                <body name="leftLowerLeg">
+                    <joint name="leftLowerLegJoint" axis="1 0 0" pos=".02540 0 .187784" />
+                    <geom mesh="leftLowerLeg"/>
+                    <body name="leftFoot">
+                        <joint name="leftFootJoint" axis="1 0 0" pos=".02540 0 0.02540" />
+                        <geom mesh="leftFoot"/>
+                        <site name="left_foot_site" pos="0.01270 0 0" size="0.01"/>
                     </body>
                 </body>
             </body>
-            <body name="topRightLinkage">
-                <joint name="rightHipJoint" axis="0 1 0" pos="-0.05715 0.15240  0.607532" />
-                <geom mesh="topRightLinkage"/>
-                <body name="upperRightLeg">
-                     <joint name="upperRightLegJoint" axis="1 0 0" pos="-0.05715 0.15240  0.404332" />
-                    <geom mesh="upperRightLeg"/>
-                    <body name="lowerRightLeg">
-                        <joint name="lowerRightLegJoint" axis="1 0 0" pos="-0.05715 0.15240  0.201132" />
-                        <geom mesh="lowerRightLeg"/>
-                        <body name="rightFoot">
-                            <joint name="rightFootJoint" axis="1 0 0" pos="-0.05715 0.15240  0.048732" />
-                            <geom mesh="rightFoot" />
-                            <site name="right_foot_site" pos="-0.05715 0.15240  0" size="0.01"/>
-                        </body>
+            <body name="rightUpperLeg">
+                <joint name="rightHipJoint" axis="0 1 0" pos="0.20320 0 .390984" />
+                <joint name="rightUpperLegJoint" axis="1 0 0" pos="0.20320 0 .390984" />
+                <geom mesh="rightUpperLeg"/>
+                <body name="rightLowerLeg">
+                    <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.20320 0 0.187784" />
+                    <geom mesh="rightLowerLeg"/>
+                    <body name="rightFoot">
+                        <joint name="rightFootJoint" axis="1 0 0" pos="0.20320 0 0.02540" />
+                        <geom mesh="rightFoot"/>
+                        <site name="right_foot_site" pos="0.21590 0 0" size="0.01"/>
                     </body>
                 </body>
             </body>
@@ -68,46 +59,18 @@
     </worldbody>
 
     <actuator>
-        <position name="leftHipJoint" joint="leftHipJoint" />
-        <position name="upperLeftLegJoint" joint="upperLeftLegJoint" />
-        <position name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
-        <position name="leftFootJoint" joint="leftFootJoint" />
+        <position name="leftHipJoint" joint="leftHipJoint"  />
+        <position name="leftUpperLegJoint" joint="leftUpperLegJoint"  />
+        <position name="leftLowerLegJoint" joint="leftLowerLegJoint"  />
+        <position name="leftFootJoint" joint="leftFootJoint"  />
 
         <position name="rightHipJoint" joint="rightHipJoint" />
-        <position name="upperRightLegJoint" joint="upperRightLegJoint" />
-        <position name="lowerRightLegJoint" joint="lowerRightLegJoint" />
+        <position name="rightUpperLegJoint" joint="rightUpperLegJoint"  />
+        <position name="rightLowerLegJoint" joint="rightLowerLegJoint"  />
         <position name="rightFootJoint" joint="rightFootJoint" />
     </actuator>
 
     <keyframe>
-    
-    <!-- <key
-  qpos="-0.00222328 0.00128547 -0.167997 0.999999 0.00106745 0.000769411 -0.000617048 0.0949589 0.892451 -2.07073 1.16626 -0.0672067 1.22245 -0.526583 -0.69148"
-/>
-        -->
-
-<key
-  time="0"
-  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.251328 1.44514 -1.19381  -0.15708 -0.251328 1.44514 -1.19381"
-  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-  ctrl="0.15708 -0.251328 1.44514 -1.19381  -0.15708 -0.251328 1.44514 -1.19381"
-/>
-
-<!-- <key
-  time="0"
-  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.11 1.44514 -1.28806 -0.15708 -0.11 1.44514 -1.28806"
-  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-  ctrl="0.15708 -0.11 1.44514 -1.28806 -0.15708 -0.11 1.44514 -1.28806"
-/> -->
-
-<!-- <key
-  time="0"
-  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.11 1.3823 -0.816816 -0.15708 -0.11 1.3823 -0.816816"
-  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-  ctrl="0.15708 -0.11 1.3823 -0.816816 -0.15708 -0.11 1.3823 -0.816816"
-/> -->
-    <key
-  qpos="-5.58579e-05 0.000270291 -0.000315669 1 -0.000121244 1.60491e-05 0.000274998 -2.88812e-05 -0.000375588 0.000267644 0.000345943 -0.000340938 -0.000720841 0.000180917 0.000770356"
-/>
-    </keyframe> 
+        <key name="home" qpos="-3.84e-06 -1.3e-05 0.45 1 -1.58e-05 7.45e-11 4.38e-06 0.15 -0.66 1.41 -0.78 -0.15 -0.66 1.41 -0.78"/>
+    </keyframe>
 </mujoco>
