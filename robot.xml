@@ -9,7 +9,7 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <motor  gear="10" />
+        <position  kp="13" />
     </default>
     <asset>
         <mesh name="body" file="mesh/body.stl" scale="0.001 0.001 0.001"/>
@@ -68,21 +68,26 @@
     </worldbody>
 
     <actuator>
-        <motor name="leftHipJoint" joint="leftHipJoint" />
-        <motor name="upperLeftLegJoint" joint="upperLeftLegJoint" />
-        <motor name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
-        <motor name="leftFootJoint" joint="leftFootJoint" />
+        <position name="leftHipJoint" joint="leftHipJoint" />
+        <position name="upperLeftLegJoint" joint="upperLeftLegJoint" />
+        <position name="lowerLeftLegJoint" joint="lowerLeftLegJoint" />
+        <position name="leftFootJoint" joint="leftFootJoint" />
 
-        <motor name="rightHipJoint" joint="rightHipJoint" />
-        <motor name="upperRightLegJoint" joint="upperRightLegJoint" />
-        <motor name="lowerRightLegJoint" joint="lowerRightLegJoint" />
-        <motor name="rightFootJoint" joint="rightFootJoint" />
+        <position name="rightHipJoint" joint="rightHipJoint" />
+        <position name="upperRightLegJoint" joint="upperRightLegJoint" />
+        <position name="lowerRightLegJoint" joint="lowerRightLegJoint" />
+        <position name="rightFootJoint" joint="rightFootJoint" />
     </actuator>
 
     <keyframe>
-    <key
+    
+    <!-- <key
   qpos="-0.00222328 0.00128547 -0.167997 0.999999 0.00106745 0.000769411 -0.000617048 0.0949589 0.892451 -2.07073 1.16626 -0.0672067 1.22245 -0.526583 -0.69148"
 />
-    </keyframe>
+        -->
 
+    <key
+  qpos="-5.58579e-05 0.000270291 -0.000315669 1 -0.000121244 1.60491e-05 0.000274998 -2.88812e-05 -0.000375588 0.000267644 0.000345943 -0.000340938 -0.000720841 0.000180917 0.000770356"
+/>
+    </keyframe> 
 </mujoco>
