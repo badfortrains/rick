@@ -9,7 +9,7 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <position  kp="13" />
+        <position  kp="20" />
     </default>
     <asset>
         <mesh name="body" file="mesh/body.stl" scale="0.001 0.001 0.001"/>
@@ -29,7 +29,7 @@
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
         <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
         <body name="body" pos="0 0 0.8"> <freejoint align="true" name="root"/>
-            <geom mesh="body" density="300"/>
+            <geom mesh="body" density="100"/>
             <body name="topLeftLinkage">
                 <joint name="leftHipJoint" axis="0 1 0" pos="-0.36195 0.15240  0.607532" />
                 <geom mesh="topLeftLinkage"/>
@@ -86,6 +86,26 @@
 />
         -->
 
+<key
+  time="0"
+  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.251328 1.44514 -1.19381  -0.15708 -0.251328 1.44514 -1.19381"
+  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+  ctrl="0.15708 -0.251328 1.44514 -1.19381  -0.15708 -0.251328 1.44514 -1.19381"
+/>
+
+<!-- <key
+  time="0"
+  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.11 1.44514 -1.28806 -0.15708 -0.11 1.44514 -1.28806"
+  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+  ctrl="0.15708 -0.11 1.44514 -1.28806 -0.15708 -0.11 1.44514 -1.28806"
+/> -->
+
+<!-- <key
+  time="0"
+  qpos="0 0 -0.03 1 0 0 0 0.15708 -0.11 1.3823 -0.816816 -0.15708 -0.11 1.3823 -0.816816"
+  qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+  ctrl="0.15708 -0.11 1.3823 -0.816816 -0.15708 -0.11 1.3823 -0.816816"
+/> -->
     <key
   qpos="-5.58579e-05 0.000270291 -0.000315669 1 -0.000121244 1.60491e-05 0.000274998 -2.88812e-05 -0.000375588 0.000267644 0.000345943 -0.000340938 -0.000720841 0.000180917 0.000770356"
 />
