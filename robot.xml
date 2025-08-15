@@ -8,7 +8,7 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <position kp="0.2" />
+        <position kp="2" />
     </default>
 
     <asset>
@@ -27,7 +27,7 @@
         <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
         <body name="body" pos="0 0 0">
             <freejoint name="root"/>
-            <geom mesh="body" density="150"/>
+            <geom mesh="body" density="100"/>
             <body name="leftUpperLeg">
                 <joint name="leftHipJoint" axis="0 1 0" pos=".02540 0 .390984" range="-0.1 1"/>
                 <joint name="leftUpperLegJoint" axis="1 0 0" pos=".02540 0 .390984" range="-1.2 1.2"/>
@@ -72,17 +72,11 @@
     </actuator>
 
     <keyframe>
-<key
- name="home"
-  qpos="3.59599e-06 0.000153245 -0.000507215 1 0.000755206 -2.1714e-07 9.52667e-07 5.58361e-05 3.73092e-05 -0.00075412 -0.000868134 -3.75697e-05 3.81408e-05 -0.000758133 -0.000865443"
-  ctrl="0 0 0 0 0 0 0 0"
-/>
-
-        <!-- <key
+        <key
         name="home"
         qpos="-3.69294e-06 -0.0166436 -0.10181 0.999773 -0.0213158 -9.25141e-08 4.37595e-06 0.177238 -0.6594 1.49926 -0.790954 -0.177238 -0.6594 1.49926 -0.790954"
         ctrl="0.15 -0.66 1.41 -0.78 -0.15 -0.66 1.41 -0.78"
-        /> -->
+        />
 
 
         <!-- <key
