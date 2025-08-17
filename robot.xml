@@ -8,7 +8,8 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <position kp="2.2" />
+        <joint damping="1.0" />
+        <position kp="8" />
     </default>
 
     <asset>
@@ -25,17 +26,17 @@
         <geom name="floor" size="0 0 .05" type="plane" condim="3" rgba="0.9 0.9 0.9 1"/>
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
         <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
-        <body name="body" pos="0 0 0.508">
+        <body name="body" pos="0 0 0.556897">
             <freejoint  name="root"/>
             <geom mesh="body" density="100"/>
             <body name="leftUpperLeg">
                 <joint name="leftHipJoint" axis="0 1 0" pos="-0.05160 -0.00726 -0.167016" range="-0.5 2"/>
                 <joint name="leftUpperLegJoint" axis="1 0 0" pos="-0.05160 -0.00726 -0.167016" range="-2 2"/>
-                <geom mesh="leftUpperLeg"/>
+                <geom mesh="leftUpperLeg" density="1500"/>
                 <body name="leftLowerLeg">
-                    <joint name="leftLowerLegJoint" axis="1 0 0" pos="-0.05160 -0.00726 -0.370216" range="-2 2"/>
-                    <geom mesh="leftLowerLeg"/>
-                    <body name="leftFoot">
+                    <joint name="leftLowerLegJoint" axis="1 0 0" pos="-0.05160 -0.00726 -0.370216" range="-2 2.7"/>
+                    <geom mesh="leftLowerLeg" density="1500"/>
+                    <body name="leftFoot" >
                         <joint name="leftFootJoint" axis="1 0 0" pos="-0.05160 -0.00726 -0.53260" range="-2 2"/>
                         <geom mesh="leftFoot"/>
                         <site name="left_foot_site" pos="-0.06410 0 -0.558" size="0.01"/>
@@ -45,13 +46,13 @@
             <body name="rightUpperLeg">
                 <joint name="rightHipJoint" axis="0 1 0" pos="0.0516 -0.00726 -0.167016" range="-0.5 2"/>
                 <joint name="rightUpperLegJoint" axis="1 0 0" pos="0.0516 -0.00726 -0.167016" range="-2 2"/>
-                <geom mesh="rightUpperLeg"/>
+                <geom mesh="rightUpperLeg" density="1500"/>
                 <body name="rightLowerLeg">
-                    <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.0516 -0.00726 -0.370216" range="-2 2"/>
-                    <geom mesh="rightLowerLeg"/>
+                    <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.0516 -0.00726 -0.370216" range="-2 2.7"/>
+                    <geom mesh="rightLowerLeg" density="1500"/>
                     <body name="rightFoot">
                         <joint name="rightFootJoint" axis="1 0 0" pos="0.0516 -0.00726 -0.53260" range="-2 2"/>
-                        <geom mesh="rightFoot"/>
+                        <geom mesh="rightFoot"  density="2000"/>
                         <site name="right_foot_site" pos="0.06410 0 -0.558" size="0.01"/>
                     </body>
                 </body>
@@ -84,7 +85,6 @@
 
     </keyframe>
 </mujoco>
-
 
 
 
