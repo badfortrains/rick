@@ -8,8 +8,8 @@
 
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
-        <joint damping="1.0" />
-        <position kp="8" />
+        <joint damping="0.2" />
+        <position kp="15" />
     </default>
 
     <asset>
@@ -25,7 +25,7 @@
     <worldbody>
         <geom name="floor" size="0 0 .05" type="plane" condim="3" rgba="0.9 0.9 0.9 1"/>
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
-        <camera name="track" mode="track" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
+        <camera name="track" mode="trackcom" pos="0 -3 1" xyaxes="1 0 0 0 0.2 1" target="body"/>
         <body name="body" pos="0 0 0.556897">
             <freejoint  name="root"/>
             <geom mesh="body" density="100"/>
