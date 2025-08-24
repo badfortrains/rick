@@ -40,9 +40,9 @@
                         <joint name="leftLowerLegJoint" axis="1 0 0" pos="-0.05160 -0.00726 -0.45520" range="-2 2.7"/>
                         <geom mesh="leftLowerLeg" density="1500"/>
                         <body name="leftFoot" >
-                            <joint name="leftFootJoint" stiffness="50" damping="2" axis="1 0 0" pos="-0.05160 -0.00726 -0.60760" range="-2 2"/>
-                            <joint name="leftAnkleRollJoint" stiffness="50" damping="2" axis="0 1 0" pos="-0.05160 -0.00726 -0.60760" range="-2 2"/>
-                            <geom mesh="leftFoot"/>
+                            <joint name="leftFootJoint"  axis="1 0 0" pos="-0.05160 -0.00726 -0.60760" range="-2 2"/>
+                            <joint name="leftAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="-0.05160 -0.00726 -0.60760" range="-2 2"/>
+                            <geom mesh="leftFoot" friction="1.0 0.005 0.0001"/>
                             <site name="left_foot_site" pos="-0.06410 0 -0.63300" size="0.01"/>
                         </body>
                     </body>
@@ -55,9 +55,9 @@
                         <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.0516 -0.00726 -0.45520" range="-2 2.7"/>
                         <geom mesh="rightLowerLeg" density="1500"/>
                         <body name="rightFoot">
-                            <joint name="rightFootJoint" stiffness="50" damping="2" axis="1 0 0" pos="0.0516 -0.00726 -0.60760" range="-2 2"/>
-                            <joint name="rightAnkleRollJoint" stiffness="50" damping="2" axis="0 1 0" pos="0.0516 -0.00726 -0.60760" range="-2 2"/>
-                            <geom mesh="rightFoot"  density="2000"/>
+                            <joint name="rightFootJoint"  axis="1 0 0" pos="0.0516 -0.00726 -0.60760" range="-2 2"/>
+                            <joint name="rightAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="0.0516 -0.00726 -0.60760" range="-2 2"/>
+                            <geom mesh="rightFoot"   friction="1.0 0.005 0.0001"  density="2000"/>
                             <site name="right_foot_site" pos="0.06410 0 -0.63300" size="0.01"/>
                         </body>
                     </body>
@@ -74,10 +74,13 @@
         <position name="leftHipJoint" joint="leftHipJoint"  />
         <position name="leftUpperLegJoint" joint="leftUpperLegJoint"  />
         <position name="leftLowerLegJoint" joint="leftLowerLegJoint"  />
+        <position name="leftFootJoint" joint="rightFootJoint" />
+
 
         <position name="rightHipJoint" joint="rightHipJoint" />
         <position name="rightUpperLegJoint" joint="rightUpperLegJoint"  />
         <position name="rightLowerLegJoint" joint="rightLowerLegJoint"  />
+        <position name="rightFootJoint" joint="rightFootJoint" />
     </actuator>
 
     <keyframe>
