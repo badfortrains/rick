@@ -70,7 +70,6 @@
     </worldbody>
 
     <actuator>
-        <position name="pelvisJoint" joint="pelvisJoint" />
         <position name="leftHipJoint" joint="leftHipJoint"  />
         <position name="leftUpperLegJoint" joint="leftUpperLegJoint"  />
         <position name="leftLowerLegJoint" joint="leftLowerLegJoint"  />
