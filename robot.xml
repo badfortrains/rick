@@ -73,7 +73,7 @@
         <position name="leftHipJoint" joint="leftHipJoint"  />
         <position name="leftUpperLegJoint" joint="leftUpperLegJoint"  />
         <position name="leftLowerLegJoint" joint="leftLowerLegJoint"  />
-        <position name="leftFootJoint" joint="rightFootJoint" />
+        <position name="leftFootJoint" joint="leftFootJoint" />
 
 
         <position name="rightHipJoint" joint="rightHipJoint" />
