@@ -9,7 +9,7 @@
     <default>
         <geom type="mesh" xyaxes="1 0 0 0 1 0" rgba="0.5 0.7 1.0 1"/>
         <joint damping="1" />
-        <position kp="20" />
+        <position kp="14" />
     </default>
 
     <asset>
@@ -28,7 +28,7 @@
         <light name="spotlight" mode="targetbodycom" target="body" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 -6 4" cutoff="30"/>
         <body name="body" pos="0 0 0.632591">
             <freejoint  name="root"/>
-            <geom mesh="body" density="1000"/>
+            <geom mesh="body" density="700"/>
             <body name="pelvis">
                 <geom mesh="pelvis" />
                 <joint name="pelvisJoint" axis="0 0 1" pos="0 0 -0.17500" range="-2 2"/>
