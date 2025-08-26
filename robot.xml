@@ -33,30 +33,30 @@
                 <geom mesh="pelvis" />
                 <joint name="pelvisJoint" axis="0 0 1" pos="0 0 -0.17500" range="-2 2"/>
                 <body name="leftUpperLeg">
-                    <joint name="leftHipJoint" axis="0 1 0" pos="-0.05160 0.01774 -0.242016" range="-0.5 2"/>
-                    <joint name="leftUpperLegJoint" axis="1 0 0" pos="-0.05160 0.01774 -0.242016" range="-2 2"/>
+                    <joint name="leftHipJoint" axis="0 1 0" pos="-0.05160 0.01774 -0.242016" range="-0.2 0.6"/>
+                    <joint name="leftUpperLegJoint" axis="1 0 0" pos="-0.05160 0.01774 -0.242016" range="-1.5 1.5"/>
                     <geom mesh="leftUpperLeg" density="1500"/>
                     <body name="leftLowerLeg">
-                        <joint name="leftLowerLegJoint" axis="1 0 0" pos="-0.05160 0.01774 -0.45520" range="-2 2.7"/>
+                        <joint name="leftLowerLegJoint" axis="1 0 0" pos="-0.05160 0.01774 -0.45520" range="0 2.7"/>
                         <geom mesh="leftLowerLeg" density="1500"/>
                         <body name="leftFoot" >
-                            <joint name="leftFootJoint"  axis="1 0 0" pos="-0.05160 0.01774 -0.60760" range="-2 2"/>
-                            <joint name="leftAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="-0.05160 0.01774 -0.60760" range="-2 2"/>
+                            <joint name="leftFootJoint"  axis="1 0 0" pos="-0.05160 0.01774 -0.60760" range="-1 1"/>
+                            <joint name="leftAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="-0.05160 0.01774 -0.60760" range="-0.5 0.5"/>
                             <geom mesh="leftFoot" density="1500" friction="1 0.005 0.0001"/>
                             <site name="left_foot_site" pos="-0.06410 0 -0.63300" size="0.01"/>
                         </body>
                     </body>
                 </body>
                 <body name="rightUpperLeg">
-                    <joint name="rightHipJoint" axis="0 1 0" pos="0.0516 0.01774 -0.242016" range="-0.5 2"/>
-                    <joint name="rightUpperLegJoint" axis="1 0 0" pos="0.0516 0.01774 -0.242016" range="-2 2"/>
+                    <joint name="rightHipJoint" axis="0 1 0" pos="0.0516 0.01774 -0.242016" range="-0.2 0.6"/>
+                    <joint name="rightUpperLegJoint" axis="1 0 0" pos="0.0516 0.01774 -0.242016" range="-1.5 1.5"/>
                     <geom mesh="rightUpperLeg" density="1500"/>
                     <body name="rightLowerLeg">
-                        <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.0516 0.01774 -0.45520" range="-2 2.7"/>
+                        <joint name="rightLowerLegJoint" axis="1 0 0" pos="0.0516 0.01774 -0.45520" range="0 2.7"/>
                         <geom mesh="rightLowerLeg" density="1500"/>
                         <body name="rightFoot">
-                            <joint name="rightFootJoint"  axis="1 0 0" pos="0.0516 0.01774 -0.60760" range="-2 2"/>
-                            <joint name="rightAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="0.0516 0.01774 -0.60760" range="-2 2"/>
+                            <joint name="rightFootJoint"  axis="1 0 0" pos="0.0516 0.01774 -0.60760" range="-1 1"/>
+                            <joint name="rightAnkleRollJoint" stiffness="5" damping="2" axis="0 1 0" pos="0.0516 0.01774 -0.60760" range="-0.5 0.5"/>
                             <geom mesh="rightFoot" density="1500" friction="1 0.005 0.0001"  />
                             <site name="right_foot_site" pos="0.06410 0 -0.63300" size="0.01"/>
                         </body>
